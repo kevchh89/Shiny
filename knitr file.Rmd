@@ -1,0 +1,42 @@
+---
+title: "Final project"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction
+
+This is the second slide, this work contains a plot which coud be manipulated to create a lineal model in the whole data points of a scatter plot or only a few of interest.
+
+It uses the data set mtcars ploting weight vs miles per galon. 
+
+## Forms of input
+
+- Slide bars: move bars left and right to adjust the axis range
+- Check boxes: check and uncheck toshow or hide the axis labels
+- Brush: select the points of interest to create a linear model
+
+## Reactive output
+
+- Line displaing the linear model of the points selected
+- Slope and intercept of the model created
+- Axis adjustment by according to the values inputed on the slider bars
+- Show/hide axis lablels by checking/unchecking the boxes
+
+
+## Data used
+```{r cars, echo = TRUE}
+head(mtcars)
+```
+
+## Plot displayed (example)
+
+```{r mtcars,echo=TRUE}
+plot(mtcars$wt,mtcars$mpg,xlab="Weight",ylab= 'Miles per Galon',
+         cex=1.5,pch=16,bty="n",col='gray')
+abline(lm(mtcars$mpg~mtcars$wt),col='red',lwd=2)
+```
+
